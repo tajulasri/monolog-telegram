@@ -17,7 +17,7 @@
             "rahimi\\TelegramHandler\\": "src"
         }
     },
-\    "require": {
+        "require": {
         "monolog/monolog": "~1"
     }
 
