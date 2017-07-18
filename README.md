@@ -3,14 +3,14 @@
 monolog-telegram
 =============
 
-Telegram Handler for monolog which allows you to log messages into telegram channels using bots . 
+Telegram Handler for monolog which allows you to log messages into telegram channels using bots .
 
 
 
 
 # Screenshot
 -------------
-![telegram handler demo screenshot](https://i.imgsafe.org/9d330119c8.png)
+![telegram handler demo screenshot](https://i.imgsafe.org/e4/e46f38474b.png)
 
 
 
@@ -20,8 +20,9 @@ Telegram Handler for monolog which allows you to log messages into telegram chan
 -----------
 Install using composer:
 
-  >composer require rahimi/monolog-telegram  
-
+```bash
+composer require rahimi/monolog-telegram  
+```
 
 
 
