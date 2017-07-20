@@ -31,7 +31,7 @@ class TelegramHandler extends AbstractProcessingHandler
 
      */
 
-    public function __construct($token, $channel)
+    public function __construct($token, $channel,$timeZone = 'UTC')
     {
 
         if (!extension_loaded('curl')) {
@@ -39,6 +39,7 @@ class TelegramHandler extends AbstractProcessingHandler
         }
         $this->token   = $token;
         $this->channel = $channel;
+        date_default_timezone_set($timeZone);
     }
 
     /**
@@ -50,7 +51,7 @@ class TelegramHandler extends AbstractProcessingHandler
     {
         $format = new LineFormatter;
         $context = $record['context'] ? $format->stringify($record['context']) : '';
-        $date = $record['datetime']->format("Y-m-d  h:m");
+        $date =  date("F j, Y, g:i a");
         $message = $date . PHP_EOL . $this->getEmoji($record['level']) . $record['message'] . $context;
         $this->send($message);
 

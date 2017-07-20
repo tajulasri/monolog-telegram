@@ -8,7 +8,6 @@
         {
             "name": "Moein Rahimi",
             "email": "m.rahimi2150@gmail.com",
-            "homepage": "https://moeinrahimi.github.io",
             "role": "Developer"
         }
     ],
@@ -17,7 +16,7 @@
             "rahimi\\TelegramHandler\\": "src"
         }
     },
-        "require": {
+    "require": {
         "monolog/monolog": "~1"
     }
 
