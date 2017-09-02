@@ -3,7 +3,7 @@
 monolog-telegram
 =============
 
-Telegram Handler for monolog which allows you to log messages into telegram channels using bots .
+Telegram Handler for php monolog which allows you to log messages into telegram channels using bots .
 
 
 
@@ -30,6 +30,8 @@ composer require rahimi/monolog-telegram
 it is just like other monolog handlers, you need to pass below paramaters to telegramhandler object:
 - **$token** your bot token provided by BotFather
 - **$channel** your telegram channel userName
+- **$date_default_timezone_set** choose date_default_timezone_set function timezone (optional)
+- **$dateFormat** pass date format (optional)
 
 
 # Examples
@@ -40,7 +42,7 @@ require 'vendor/autoload.php';
 use Monolog\Logger;
 use rahimi\TelegramHandler\TelegramHandler;
 $log = new Logger('TelegramHandler');
-$log->pushHandler(new TelegramHandler($token,$channel));
+$log->pushHandler(new TelegramHandler($token,$channel,'UTC','F j, Y, g:i a'));
 
 
 $log->info('hello world !');
