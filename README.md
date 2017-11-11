@@ -5,8 +5,9 @@ monolog-telegram
 
 Telegram Handler for php monolog which allows you to log messages into telegram channels using bots .
 
-
-
+[![Latest Stable Version](https://poser.pugx.org/rahimi/monolog-telegram/v/stable)](https://packagist.org/packages/rahimi/monolog-telegram)
+[![Total Downloads](https://poser.pugx.org/rahimi/monolog-telegram/downloads)](https://packagist.org/packages/rahimi/monolog-telegram)
+[![License](https://poser.pugx.org/rahimi/monolog-telegram/license)](https://packagist.org/packages/rahimi/monolog-telegram)
 
 # Screenshot
 -------------
