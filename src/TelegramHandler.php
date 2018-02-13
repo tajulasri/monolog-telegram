@@ -72,6 +72,7 @@ class TelegramHandler extends AbstractProcessingHandler
         $this->dateFormat = $dateFormat;
 
         $this->getTimezone();
+        $this->curlExtensionInstalled();
     }
 
     /**
@@ -110,6 +111,9 @@ class TelegramHandler extends AbstractProcessingHandler
             )));
             $result = curl_exec($ch);
             $result = json_decode($result, 1);
+
+            $this->response = $result;
+
             if ($result['ok'] === false) {
                 echo 'telegram api response : ' . $result['description'];
             }
@@ -159,6 +163,14 @@ class TelegramHandler extends AbstractProcessingHandler
     protected function setDefaultTimezoneFormat()
     {
         return date_default_timezone_set($this->timeZone);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getResponse()
+    {
+        return $this->response;
     }
 
     /**
