@@ -85,7 +85,8 @@ class TelegramHandler extends AbstractProcessingHandler
         $format = new LineFormatter;
         $context = $record['context'] ? $format->stringify($record['context']) : '';
         $date = date($this->dateFormat);
-        $message = $date . PHP_EOL . $this->emojiMapping[$record['level']] . ' ' . $record['formatted'] . $context;
+        $truncatedLongMessage = substr($record['formatted'], 0, 200);
+        $message = $date . PHP_EOL . $this->emojiMapping[$record['level']] . ' ' . $truncatedLongMessage . $context;
 
         $this->send($message);
 
