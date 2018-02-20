@@ -43,6 +43,11 @@ class TelegramHandler extends AbstractProcessingHandler
     private $response;
 
     /**
+     * @var int
+     */
+    private $messageLength = 4096;
+
+    /**
      * @var array
      */
     private $emojiMapping = [
@@ -85,7 +90,7 @@ class TelegramHandler extends AbstractProcessingHandler
         $format = new LineFormatter;
         $context = $record['context'] ? $format->stringify($record['context']) : '';
         $date = date($this->dateFormat);
-        $truncatedLongMessage = substr($record['formatted'], 0, 200);
+        $truncatedLongMessage = substr($record['formatted'], 0, $this->messageLength);
         $message = $date . PHP_EOL . $this->emojiMapping[$record['level']] . ' ' . $truncatedLongMessage . $context;
 
         $this->send($message);
