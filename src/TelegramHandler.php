@@ -45,7 +45,7 @@ class TelegramHandler extends AbstractProcessingHandler
     /**
      * @var int
      */
-    private $messageLength = 4096;
+    private $messageLength = 2000;
 
     /**
      * @var array
